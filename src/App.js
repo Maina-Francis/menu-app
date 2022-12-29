@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
 
 function App() {
+  const [menuItems, setMenuItems] = useState(items);
+  const [categories, setCategories] = useState([]);
+
   return (
-    <div className="App">
-      <h2>App Component</h2>
-    </div>
+    <main>
+      <section className="menu section">
+        <div className="title">
+          <h2>Our Menu</h2>
+        </div>
+        <div className="underline"></div>
+
+        <Categories />
+        <Menu items={menuItems} />
+      </section>
+    </main>
   );
 }
 
